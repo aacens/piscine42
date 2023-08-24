@@ -2,14 +2,14 @@
 
 int ft_putstr(char *str)
 {
-    int i;
+    int v;
     char c;
 
-    i = 0;
-    while (str[i])
+    v = 0;
+    while (str[v])
     {
-        c = str[i];
+        c = str[v];
         write(1, &c, 1);
-        i++;
+        v++;
     }
 }

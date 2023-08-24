@@ -2,12 +2,12 @@
 
 int ft_strlen(char *str)
 {
-    int i;
+    int v;
 
-    i = 0;
-    while (str[i])
+    v = 0;
+    while (str[v])
     {
-        i++;
+        v++;
     }
-    return(i);
+    return(v);
 }
