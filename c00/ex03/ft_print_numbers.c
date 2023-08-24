@@ -1,14 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aacens <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/24 14:39:46 by aacens            #+#    #+#             */
+/*   Updated: 2023/08/24 14:40:39 by aacens           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_numbers(void)
+void	ft_print_numbers(void)
 {
-    int number;
+	int	number;
 
-    number = '0';
-    while (number != ':')
-    {
-        write(1, &number, 1);
-        number++;
-    }
-    
+	number = '0';
+	while (number != ':')
+	{
+		write (1, &number, 1);
+		number++;
+	}
 }
