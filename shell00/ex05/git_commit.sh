@@ -1,1 +1,1 @@
-git log --pretty=format:"%H" -n 5
+git log -n 5 --pretty=oneline | cut -d " " -f 1
