@@ -11,3 +11,7 @@ int ft_strlen(char *str)
     }
     return(v);
 }
+
+for (char i : str){
+    
+}
