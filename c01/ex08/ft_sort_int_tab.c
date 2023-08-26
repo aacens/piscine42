@@ -24,11 +24,15 @@ void ft_sort_int_tab(int *tab, int size)
         while (reste < size) 
         {
             if (tab[reste] < tab[mini]) 
+            {
                 mini = reste;
+            }
             reste++;
         }
         if (mini != v) 
-            ft_swap(&tab[v], &tab[mini]);
+        {
+            swap(&tab[v], &tab[mini]);
+        }
         v++;
     }
 }
