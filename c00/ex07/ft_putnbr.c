@@ -6,18 +6,18 @@
 /*   By: aacens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 15:05:19 by aacens            #+#    #+#             */
-/*   Updated: 2023/08/24 15:13:11 by aacens           ###   ########.fr       */
+/*   Updated: 2023/08/27 14:21:19 by aacens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int	 nb)
+void	ft_putnbr(int nb)
 {
 	long	print;
 	long	checknb;
 	char	c;
-	long	nbEnLong;
+	long	nb_en_long;
 
 	nbEnLong = nb;
 	if (nbEnLong < 0)
@@ -40,6 +40,7 @@ void	ft_putnbr(int	 nb)
 	}
 }
 
+/*
 int main()
 {
 	ft_putnbr(-2147483648);
@@ -56,4 +57,4 @@ int main()
 	printf("\n");
 	ft_putnbr(42);
 	printf("\n");
-}
+}*/

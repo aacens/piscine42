@@ -1,1 +1,1 @@
-find . -type f \( -name "*~" -o -name "#*#" \) -delete -exec basename {} \:
+find . -type f \( -name "*~" -o -name "#*#" \) -delete -exec basename {} \;
