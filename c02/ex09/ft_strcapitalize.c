@@ -10,18 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-int	ft_putstr(char	*str)
+char	*ft_strcapitalize(char *str)
 {
-	int		v;
-	char	c;
+	int	i;
+	int	premier;
 
-	v = 0;
-	while (str[v])
+	i = 0;
+	premier = 1;
+	while (str[i] != '\0')
 	{
-		c = str[v];
-		write(1, &c, 1);
-		v++;
+		if ((str[i] > 64 && str[i] < 91) && premier == 0)
+		{
+			str[i] += 32;
+		}
+		if ((str[i] > 96 && str[i] < 123) && premier == 1)
+		{
+			str[i] -= 32;
+		}
+		premier = 0;
+		if (!((str[i] > 47 && str[i] < 58) || (str[i] > 64 && str[i] < 91) ||
+		(str[i] > 96 && str[i] < 123)))
+		{
+			premier = 1;
+		}
+		i++;
 	}
+	return (str);
+}
+
+int main(int av, char **ag)
+{
+	if (av < 2)
+		return 0;
+	printf("avant = %s'\n", ag[1]);
+	printf("apres = %s", ft_strcapitalize(ag[1]));
+	return 0;
 }

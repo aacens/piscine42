@@ -1,16 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aacens <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 08:55:01 by aacens            #+#    #+#             */
-/*   Updated: 2023/08/28 08:55:13 by aacens           ###   ########.fr       */
+/*   Created: 2023/08/28 09:00:53 by aacens            #+#    #+#             */
+/*   Updated: 2023/08/28 09:01:40 by aacens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_ft(int	*********nbr)
+#include <stdio.h>
+
+char *ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	*********nbr = 42;
+	unsigned int i;
+
+	i = 0;
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
+
+/*int	main(int av,char **ag)
+{
+	av = 10;
+	char dest2[100];
+	printf("le retour de ma fonction (%s) = %s\n", ag[1], ft_strncpy(dest2 , ag[1], av));
+	return 0;
+}*/
