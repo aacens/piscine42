@@ -1,10 +1,7 @@
-void    ft_putchar(char print, char *base)
-{
-    int i;
+#include <stdio.h>
+#include <unistd.h>
 
-    i = print;
-    write(1, &base[i], 1);
-}
+
 
 int        check_base(char *base)
 {
@@ -37,30 +34,44 @@ int        get_base(char *base)
     return (i);
 }
 
+void    ft_putchar(char print)
+{
+    write(1, &print, 1);
+}
+
+
 void    ft_putnbr_base(int nbr, char *base)
 {
     long long    n;
-    long long    i;
+    int            len;
     char        print;
-    int            iv2;
 
     if (check_base(base))
         return ;
-    i = get_base(base);
+
+    len = get_base(base);
     n = nbr;
-    len = i;
+
     if (n < 0)
     {
         n *= -1;
         write(1, "-", 1);
     }
-    while (n >= i)
-        i *= len;
-    while (i >= len)
-    {
-        i /= len;
-        print = (n - (n % i)) / i;
-        ft_putchar(print, base);
-        n = n % i;
-    }
+
+    if (n >= len)
+        ft_putnbr_base(n / len, base);
+    print = base[n % len];
+    ft_putchar(print);
+}
+
+
+int main(void)
+{
+    int nbr = 255;
+    char base[] = "0123456789ABCDEF";
+    
+    ft_putnbr_base(nbr, base);
+    ft_putchar('\n');
+    
+    return 0;
 }
