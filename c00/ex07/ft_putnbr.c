@@ -17,23 +17,23 @@ void	ft_putnbr(int nb)
 	long	print;
 	long	checknb;
 	char	c;
-	long	nb_en_long;
+	long	nbdeux;
 
-	nbEnLong = nb;
-	if (nbEnLong < 0)
+	nbdeux = nb;
+	if (nbdeux < 0)
 	{
 		write(1, "-", 1);
-		nbEnLong = -nbEnLong;
+		nbdeux = -nbdeux;
 	}
 	checknb = 1;
-	while (checknb * 10 <= nbEnLong)
+	while (checknb * 10 <= nbdeux)
 	{
 		checknb *= 10;
 	}
 	while (checknb > 0)
 	{
-		print = nbEnLong / checknb;
-		nbEnLong = nbEnLong % checknb;
+		print = nbdeux / checknb;
+		nbdeux = nbdeux % checknb;
 		c = print + '0';
 		write (1, &c, 1);
 		checknb /= 10;
