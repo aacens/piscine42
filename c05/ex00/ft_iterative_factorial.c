@@ -2,7 +2,7 @@
 
 void ft_iterative_factorial(int nb)
 {
-    int current_nb;
+    long current_nb;
 
     current_nb = 1;
     if (nb < 0)
