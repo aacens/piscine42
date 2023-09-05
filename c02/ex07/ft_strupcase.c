@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aacens <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aacens <aacens@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 09:00:53 by aacens            #+#    #+#             */
-/*   Updated: 2023/08/28 09:01:40 by aacens           ###   ########.fr       */
+/*   Updated: 2023/09/04 17:36:10 by aacens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
-char	ft_trupcase(char *str)
+char	*ft_strupcase(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -25,7 +25,7 @@ char	ft_trupcase(char *str)
 		}
 		i++;
 	}
-	return (*str);
+	return (str);
 }
 
 /*int main(int av, char **ag)

@@ -1,50 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aacens <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aacens <aacens@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 09:00:53 by aacens            #+#    #+#             */
-/*   Updated: 2023/08/28 09:01:40 by aacens           ###   ########.fr       */
+/*   Updated: 2023/09/04 13:39:24 by aacens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
+#include <stdbool.h>
+
+bool	is_alphanumeric(char c)
+{
+	return ((c >= 'a' && c <= 'z') || 
+		(c >= 'A' && c <= 'Z') || 
+		(c >= '0' && c <= '9'));
+}
 
 char	*ft_strcapitalize(char *str)
 {
-	int	i;
-	int	premier;
+	int		i;
+	bool	is_first_char;
 
+	is_first_char = true;
 	i = 0;
-	premier = 1;
 	while (str[i] != '\0')
 	{
-		if ((str[i] > 64 && str[i] < 91) && premier == 0)
+		if (is_alphanumeric(str[i]))
 		{
-			str[i] += 32;
+			if (is_first_char)
+			{
+				if (str[i] >= 'a' && str[i] <= 'z') 
+					str[i] -= 32;
+				is_first_char = false;
+			}
+			else 
+				if (str[i] >= 'A' && str[i] <= 'Z') 
+					str[i] += 32;
 		}
-		if ((str[i] > 96 && str[i] < 123) && premier == 1)
-		{
-			str[i] -= 32;
-		}
-		premier = 0;
-		if (!((str[i] > 47 && str[i] < 58) || (str[i] > 64 && str[i] < 91) ||
-		(str[i] > 96 && str[i] < 123)))
-		{
-			premier = 1;
-		}
+		else 
+			is_first_char = true;
 		i++;
 	}
 	return (str);
 }
 
-int main(int av, char **ag)
+/*int main(int av, char **ag)
 {
 	if (av < 2)
 		return 0;
 	printf("avant = %s'\n", ag[1]);
 	printf("apres = %s", ft_strcapitalize(ag[1]));
 	return 0;
-}
+}*/

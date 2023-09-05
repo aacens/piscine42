@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aacens <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aacens <aacens@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 09:00:53 by aacens            #+#    #+#             */
-/*   Updated: 2023/08/28 09:01:40 by aacens           ###   ########.fr       */
+/*   Updated: 2023/09/04 12:23:49 by aacens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
 int	ft_str_is_uppercase(char *str)
 {
@@ -20,12 +20,11 @@ int	ft_str_is_uppercase(char *str)
 	while (str[i] != '\0')
 	{
 		if (!(str[i] >= 'A' && str[i] <= 'Z'))
-			return(0);
+			return (0);
 		i++;
 	}
-return (1);
+	return (1);
 }
-
 
 /*int main(int av, char **ag)
 {

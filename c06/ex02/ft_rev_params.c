@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aacens <aacens@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 09:00:53 by aacens            #+#    #+#             */
-/*   Updated: 2023/09/05 09:35:16 by aacens           ###   ########.fr       */
+/*   Created: 2023/09/04 13:47:37 by aacens            #+#    #+#             */
+/*   Updated: 2023/09/04 13:47:37 by aacens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
 
-int	ft_str_is_lowercase(char *str)
+void	ft_print_programs(char *str)
 {
-	int	i;
-
+	int i;
+  
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!(str[i] >= 'a' && str[i] <= 'z'))
-			return (0);
+		write(1, &str[i], 1);
 		i++;
 	}
-	return (1);
 }
-
-/*int main(int av, char **ag)
-{
-    if (av < 2)
-        return 0;
-    printf("le retour de fonction(%s) = %d", ag[1] , ft_str_is_lowercase(ag[1]));
-    return 0;
-}*/
+ 
+int	main(int av, char **ag) 
+{ 
+	int i;
+  
+	i = ac - 1;
+	while (i != 0)
+	{
+		ft_print_programs(ag[i]);
+		write(1, "\n", 1);
+		i--;
+	}
+	return (0);
+}

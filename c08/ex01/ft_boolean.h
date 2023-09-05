@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aacens <aacens@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 09:00:53 by aacens            #+#    #+#             */
-/*   Updated: 2023/09/05 09:35:16 by aacens           ###   ########.fr       */
+/*   Created: 2023/09/04 15:43:32 by aacens            #+#    #+#             */
+/*   Updated: 2023/09/04 18:08:45 by aacens           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
+#include <stdio.h>
 
-int	ft_str_is_lowercase(char *str)
-{
-	int	i;
+#define FT_BOOLEAN_H
+#define TRUE 1
+#define FALSE 0
+#define SUCCESS 0
+#define EVEN(x) ((x % 2) == 0)
+#define EVEN_MSG "I have an even number of arguments.\n"
+#define ODD_MSG "I have an odd number of arguments.\n"
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (!(str[i] >= 'a' && str[i] <= 'z'))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-/*int main(int av, char **ag)
-{
-    if (av < 2)
-        return 0;
-    printf("le retour de fonction(%s) = %d", ag[1] , ft_str_is_lowercase(ag[1]));
-    return 0;
-}*/
+typedef int	t_bool;
